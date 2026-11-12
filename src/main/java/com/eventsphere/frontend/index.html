@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EventSphere | Discover What's Happening</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <nav class="nav">
+
+        <a class="brand" href="#">
+            <span class="brand-mark">E</span>
+            EventSphere
+        </a>
+
+        <div class="nav-links">
+            <a href="#events">Explore</a>
+            <a href="#how">How it works</a>
+        </div>
+
+        <a class="nav-cta" href="#events">
+            Explore events ↗
+        </a>
+        
+<div class="account-navigation" id="accountNavigation">
+    <a href="auth.html" id="loginLink" class="account-btn">
+        Login / Sign Up
+    </a>
+
+    <div id="loggedInMenu" hidden>
+        <span id="userGreeting"></span>
+
+        <a href="my-account.html" id="myAccountLink">
+            My Account
+        </a>
+
+        <a href="organizer-dashboard.html" id="organizerLink" hidden>
+            Organizer Dashboard
+        </a>
+
+        <a href="admin-dashboard.html" id="adminLink" hidden>
+            Admin Dashboard
+        </a>
+
+        <button id="logoutButton" type="button">
+            Logout
+        </button>
+    </div>
+</div>
+
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <header class="hero">
+
+        <div class="hero-copy">
+
+            <span class="eyebrow">
+                DELHI NCR • YOUR CITY, YOUR SCENE
+            </span>
+
+            <h1>
+                Find your next<br>
+                <span>big experience.</span>
+            </h1>
+
+            <p>
+                From college fests to hackathons, workshops to live music —
+                discover what's happening around you.
+            </p>
+
+            <a class="primary-btn" href="#events">
+                Explore events <span>→</span>
+            </a>
+
+            <div class="hero-note">
+                <span class="live-dot"></span>
+                Discover. Register. Connect.
+            </div>
+
+        </div>
+
+
+        <div class="hero-art">
+
+            <div class="art-card art-one">
+
+                <span>01 / TECH</span>
+
+                <b>
+                    Build<br>
+                    something<br>
+                    great.
+                </b>
+
+                <small>Hackathons & meetups</small>
+
+            </div>
+
+
+            <div class="art-card art-two">
+
+                <span>02 / CULTURE</span>
+
+                <b>
+                    Feel the<br>
+                    energy.
+                </b>
+
+                <small>Fests & live shows</small>
+
+            </div>
+
+
+            <div class="art-sticker">
+                YOUR<br>
+                PEOPLE<br>
+                ARE HERE ↗
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- EVENTS SECTION -->
+
+    <main>
+
+        <section class="section" id="events">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        THE CITY IS YOURS
+                    </span>
+
+                    <h2>Upcoming events</h2>
+
+                    <p>
+                        Find something worth stepping out for.
+                    </p>
+
+                </div>
+
+                <span class="event-count" id="eventCount">
+                    Loading events...
+                </span>
+
+            </div>
+
+
+            <!-- SEARCH AND FILTER -->
+
+            <div class="filters">
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search events, venues, cities..."
+                >
+
+                <select id="categoryFilter">
+
+                    <option value="">All categories</option>
+
+                    <option>Technology</option>
+                    <option>Hackathon</option>
+                    <option>Music</option>
+                    <option>Workshop</option>
+                    <option>College Fest</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- EVENTS WILL LOAD HERE -->
+
+            <div id="eventGrid" class="event-grid">
+
+                <p class="loading">
+                    Finding events for you...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMMUNITY SECTION -->
+
+        <section class="community" id="how">
+
+            <div>
+
+                <span class="eyebrow">
+                    MORE THAN JUST AN EVENT
+                </span>
+
+                <h2>
+                    Go for the event.<br>
+                    <span>Stay for the people.</span>
+                </h2>
+
+            </div>
+
+
+            <p>
+                Register for an event and get access to its Telegram
+                community. Meet fellow attendees, share ideas and plan
+                your experience — without publishing everyone's phone
+                number on the website.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <a class="brand" href="#">
+            <span class="brand-mark">E</span>
+            EventSphere
+        </a>
+
+        <span>
+            Discover • Connect • Experience
+        </span>
+
+        <span>
+            © 2026 EventSphere
+        </span>
+
+    </footer>
+
+
+    <!-- REGISTRATION POPUP -->
+
+    <dialog id="registerDialog">
+
+        <button
+            class="close-btn"
+            id="closeDialog"
+            aria-label="Close">
+            ×
+        </button>
+
+        <span class="eyebrow">
+            SAVE YOUR SPOT
+        </span>
+
+        <h2 id="dialogTitle">
+            Register for event
+        </h2>
+
+
+        <form id="registerForm">
+
+            <input type="hidden" id="eventId">
+
+
+            <label>
+                Your name
+
+                <input
+                    type="text"
+                    id="attendeeName"
+                    required
+                    maxlength="100"
+                    placeholder="Enter your name"
+                >
+
+            </label>
+
+
+            <label>
+                Email address
+
+                <input
+                    type="email"
+                    id="attendeeEmail"
+                    required
+                    maxlength="180"
+                    placeholder="you@example.com"
+                >
+
+            </label>
+
+
+            <button class="primary-btn full" type="submit">
+                Complete registration →
+            </button>
+
+        </form>
+
+
+        <div
+            id="registrationResult"
+            class="result"
+            aria-live="polite">
+        </div>
+
+
+        <p class="privacy-note">
+            Your email is used for registration and is not displayed publicly.
+        </p>
+
+    </dialog>
+
+
+	<script type="module" src="js/account.js"></script>
+
+</body>
+</html>
